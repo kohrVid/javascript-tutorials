@@ -1,4 +1,8 @@
 var mongodb = require("mongodb");
+var fn = require("./myFile.js");
+fn()
+var otherFn = require("./test").other;
+otherFn();
 
 var uri = "mongodb://localhost:27017/example";
 mongodb.MongoClient.connect(uri, function (error, db) {
