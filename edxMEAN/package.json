@@ -4,12 +4,17 @@
   "description": "[edX](https://courses.edx.org/courses/course-v1:MongoDBx+M101x+2T2016)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -R nyan test.js",
+    "test-kitten": "mocha -R nyan test.js",
+    "watch": "gulp watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "underscore": "^1.8.3",
-    "mongodb": "2.0"
+    "mongodb": "2.0",
+    "gulp": "3.8.11",
+    "gulp-mocha": "2.0.1",
+    "mocha": "2.2.4"
   }
 }
