@@ -1,0 +1,15 @@
+{
+  "name": "edx-mean",
+  "version": "1.0.0",
+  "description": "[edX](https://courses.edx.org/courses/course-v1:MongoDBx+M101x+2T2016)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "underscore": "^1.8.3",
+    "mongodb": "2.0"
+  }
+}
