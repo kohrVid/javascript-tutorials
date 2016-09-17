@@ -1,10 +1,32 @@
 var mongodb = require("mongodb");
-var fn = require("./myFile.js");
-fn()
-var otherFn = require("./test").other;
-otherFn();
+var mongoose = require("mongoose");
+var schema = require("./schema.js");
 
-var uri = "mongodb://localhost:27017/example";
+
+var uri = "mongodb://localhost:27017/test";
+mongoose.connect(uri);
+var User = mongoose.model("User", schema, "users");
+
+var user = new User({
+  name: "Joan Smith",
+  email: "joan@smith.io"
+});
+
+user.save(function (error) {
+  if (error) {
+    console.log(error);
+    process.exit(1);
+  }
+  User.find({ email: "joan@smith.io"}, function (error, docs) {
+    if (error) {
+      console.log(error);
+      process.exit(1);
+    }
+    console.log(require("util").inspect(docs));
+    process.exit(0);
+  });
+});
+
 mongodb.MongoClient.connect(uri, function (error, db) {
   if (error) {
     console.log(error);

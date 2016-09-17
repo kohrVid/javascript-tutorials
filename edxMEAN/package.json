@@ -11,10 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "underscore": "^1.8.3",
-    "mongodb": "2.0",
+    "assert": "^1.4.1",
     "gulp": "3.8.11",
     "gulp-mocha": "2.0.1",
-    "mocha": "2.2.4"
+    "mocha": "2.2.4",
+    "mongodb": "2.0",
+    "mongoose": "^4.6.0",
+    "underscore": "^1.8.3"
   }
 }
