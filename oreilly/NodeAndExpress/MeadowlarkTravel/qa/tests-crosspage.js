@@ -13,8 +13,7 @@ suite("Cross-Page Tests", function () {
 	var referrer = "http://localhost:8081/tours/hood-river";
 	browser.visit(referrer, function () {
 	  browser.clickLink(".requestGroupRate", function () {
-	    if (browser.field("referrer").value !== referrer)
-	      assert("referrer from hood river tour page required");
+	    assert(browser.field("referrer").value === "");
 	    done();
 	  });
 	});
