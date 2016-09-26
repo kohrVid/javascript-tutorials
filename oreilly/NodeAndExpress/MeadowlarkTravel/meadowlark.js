@@ -3,17 +3,17 @@ var express = require("express");
 var app = express();
 
 var handlebars = require("express3-handlebars")
-    .create({ defaultLayout: "main",
-   helpers: {
-     section: function (name, options) {
-       if(!this._sections) this_sections = {};
-       this._sections[name] = options.fn(this);
-       return null;
-     }
+  .create({ 
+     defaultLayout: "main",
+     helpers: {
+       section: function (name, options) {
+	 if(!this._sections) this_sections = {};
+	 this._sections[name] = options.fn(this);
+	 return null;
+       }
    } 
 });
 var fortune = require("./lib/fortune.js");
-
 app.engine("handlebars", handlebars.engine);
 app.set("view engine", "handlebars");
 
